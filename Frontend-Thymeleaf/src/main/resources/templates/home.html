@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{basic-layout.html}">
+<head>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/home.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/fragments.css}">
+	<title>Homepage</title>
+</head>
+<body>
+
+<!-- Ttile -->
+<div layout:fragment="content">
+	<h1 id="title">TRAVEL SMART - <span id="title-attention">PICK A DESTINATION</span></h1>
+	
+	<section id="card-container">
+		<div th:each="city:${cities}">
+			<div th:insert="fragments :: cityCard(cardCity=*{city})" th:href="@{/city/{cityName}(cityName=*{city.cityName})}" ></div>
+		</div>
+	</section>
+	
+	<div th:if="${totalPages > 1}"
+	     th:insert="fragments :: pagination(totalPages=*{totalPages}, currentPage=*{currentPage})"
+	     id="pagination-container">
+	
+	</div>
+
+</div>
+</body>
+</html>

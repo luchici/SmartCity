@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+	<link rel="stylesheet" th:href="@{/css/basic-layout.css}">
+	<title layout:title-pattern="$LAYOUT_TITLE - $CONTENT_TITLE">Smartcity</title>
+</head>
+
+<body>
+<nav class="navbar">
+	<a th:href="@{/test/home}" class="button">Home</a>
+	<a th:href="@{/login}" class="button">Log In</a>
+	<a th:href="@{/signup}" class="button">Sign Up</a>
+</nav>
+
+<section class="content" layout:fragment="content"></section>
+
+<footer class="footer">
+	<p class="lead">Copyright &copy; 2023 SmartCity</p>
+</footer>
+</body>
+</html>

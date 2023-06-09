@@ -1,0 +1,22 @@
+#title{
+    font-size: 3rem;
+    text-align: center;
+}
+
+#title-attention{
+    color: #AF1B3F;
+}
+
+#card-container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+}
+
+#pagination-container{
+    padding-top: 3rem;
+    text-align: center;
+    width: 40%;
+    margin: auto;
+}

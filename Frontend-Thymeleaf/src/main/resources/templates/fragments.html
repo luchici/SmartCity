@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>
+		Hi there</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+<div th:fragment="username">
+	<a th:text="${username}" th:href="@{/profile}"></a>
+</div>
+
+<div th:fragment="cityCard(city)" class="cityCard">
+	<img src="https://dummyimage.com/400.jpg" class="card-img" alt="Image with city center"/>
+	<p th:text="*{city.cityName}"></p>
+</div>
+
+<div th:fragment="pagination(totalPages, currentPage)" class="pagination">
+	
+	<div th:if="${currentPage>1}" class="previos-pages">
+		<div th:each="i:${#numbers.sequence((currentPage-5)<0?1:(currentPage-5), (currentPage-1))}">
+			<a th:href="@{/test/home/pages/{pageNumber}(pageNumber=*{i})}" th:text="*{i}" class="page-number"></a>
+		</div>
+	</div>
+	
+	<p th:text="*{currentPage}" id="current-page" class="page-number"></p>
+	
+	<div th:if="${currentPage<totalPages}" class="next-pages">
+		<div th:each="i:${#numbers.sequence((currentPage+1), (currentPage+5)>totalPages?totalPages:(currentPage+5))}">
+			<a th:href="@{/test/home/pages/{pageNumber}(pageNumber=*{i})}" th:text="*{i}" class="page-number"></a>
+		</div>
+	</div>
+
+</div>
+</body>
+</html>
