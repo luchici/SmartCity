@@ -1,0 +1,50 @@
+.form-container {
+    background-color: skyblue;
+    width: 30%;
+    margin: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5rem;
+}
+
+#login-text {
+    padding-top: 0;
+    padding-bottom: 0.5rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.form-component {
+    padding: 0.5rem 0;
+    width: 100%;
+}
+
+#submit-button {
+    padding: 5px;
+    margin-top: 15px;
+    font-size: 1.2rem;
+    background-color: lightgray;
+    box-shadow: -5px 5px gray;
+    border-radius: 10px;
+}
+
+#submit-button:active {
+    box-shadow: none;
+    transform: scale(20);
+}
+
+input[type=text],
+input[type=password]{
+    font-size: 1.2rem;
+    padding-left: 0.5rem;
+}
+
+input[type=checkbox] {
+    width: 1.2rem;
+    height: 1.2rem;
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{basic-layout.html}">
+<head>
+	<link rel="stylesheet" th:href="@{css/auth.css}">
+	<title>Log In</title>
+</head>
+<body>
+<form layout:fragment="content" th:object="${newUser}" th:action="signup" th:method="post" class="form-container">
+	<h3 id="login-text">Sign Up</h3>
+	
+	<label for="firstName" class="form-component">FirstName:</label>
+	<input th:filed="*{firstName}" type="text" name="firstName" id="firstName" class="form-component"/>
+	
+	<label for="lastName" class="form-component">LastName:</label>
+	<input th:filed="*{lastName}" type="text" name="lastName" id="lastName" class="form-component"/>
+	
+	<label for="username" class="form-component">Username:</label>
+	<input th:filed="*{username}" type="text" name="username" id="username" class="form-component"/>
+	
+	<label for="homecity" class="form-component">Homecity:</label>
+	<input th:filed="*{homecity}" type="text" name="homecity" id="homecity" class="form-component"/>
+	
+	<label for="dob" class="form-component">Date of birth:</label>
+	<input th:filed="*{dob}" type="date" name="dob" id="dob" class="form-component"/>
+	
+	<label for="email" class="form-component">Email:</label>
+	<input th:filed="*{email}" type="text" name="email" id="email" class="form-component"/>
+	
+	<label for="password" class="form-component">Password:</label>
+	<input th:filed="*{password}" type="password" name="password" id="password" class="form-component"/>
+	
+	<button type="submit" name="submit" class="form-component" id="submit-button">Let's Try</button>
+</form>
+</body>
+</html>
