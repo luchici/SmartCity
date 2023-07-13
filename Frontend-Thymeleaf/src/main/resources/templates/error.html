@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{basic-layout.html}">
+<head>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/error.css}">
+	<title>Homepage</title>
+</head>
+<body>
+
+<!-- Ttile -->
+<div layout:fragment="content">
+
+	<p class="error-text">Something went wrong!</p>
+	<p class="error-text">Error message: <th:block class="error-text" th:utext="${exception}"></th:block></p>
+	
+</div>
+</body>
+</html>

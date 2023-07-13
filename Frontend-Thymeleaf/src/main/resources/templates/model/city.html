@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml"
+      xmlns:layout="http://www.w3.org/1999/xhtml"
+      layout:decorate="~{basic-layout.html}">
+<head>
+	<link rel="stylesheet" th:href="@{model/city.css}">
+	<title>${city.cityName}</title>
+</head>
+<body>
+<div layout:fragment="content">
+	<h1>City</h1>
+	
+	<h1> Chosen City is:</h1>
+	<p th:text="#{city.cityName}">City Name</p>
+	<p th:text="#{city.country}">Country</p>
+	
+	<!--<p th:text="${param.cityName}">Test</p>-->
+</div>
+</body>
+</html>

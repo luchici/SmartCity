@@ -8,10 +8,8 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @SpringBootTest
 class AuthServiceApplicationTests {
-
-	@Test
-	void contextLoads(WebApplicationContext context) {
-		assertNotNull(context);
-	}
-
+    @Test
+    void contextLoads(WebApplicationContext context) {
+        assertNotNull(context);
+    }
 }

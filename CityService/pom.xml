@@ -19,7 +19,7 @@
     </properties>
 
     <dependencies>
-<!--        Main Project-->
+        <!--        Main Project-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -28,7 +28,11 @@
         <dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
-            <version>42.6.0</version>
+<!--            <version>42.6.0</version>-->
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
             <groupId>org.flywaydb</groupId>
@@ -79,7 +83,6 @@
         </dependency>
 
 
-
     </dependencies>
     <build>
         <plugins>
@@ -88,9 +91,10 @@
                 <artifactId>flyway-maven-plugin</artifactId>
                 <configuration>
                     <driver>org.postgresql.Driver</driver>
-                    <url>jdbc:postgresql://localhost:5432/SmartCity</url>
+                    <url>jdbc:postgresql://localhost:5432/SmartCity-City</url>
                     <user>postgres</user>
-                    <password>aaa</password>
+                    <password>Ireland123</password>
+                    <cleanDisabled>false</cleanDisabled>
                 </configuration>
             </plugin>
         </plugins>

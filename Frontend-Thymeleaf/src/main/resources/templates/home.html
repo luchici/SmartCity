@@ -13,19 +13,23 @@
 <!-- Ttile -->
 <div layout:fragment="content">
 	<h1 id="title">TRAVEL SMART - <span id="title-attention">PICK A DESTINATION</span></h1>
-	
-	<section id="card-container">
-		<div th:each="city:${cities}">
-			<div th:insert="fragments :: cityCard(cardCity=*{city})" th:href="@{/city/{cityName}(cityName=*{city.cityName})}" ></div>
+	<div th:unless="${session.cities.isEmpty()}">
+		<section id="card-container">
+			<div th:each="city:${session.cities}">
+				<div th:insert="fragments :: cityCard(cardCity=*{city})"
+				     th:href="@{/city/{cityName}(cityName=*{city.cityName})}"></div>
+			</div>
+		</section>
+		
+		<div th:if="${session.totalPages > 1}"
+		     th:insert="fragments :: pagination(totalPages=*{session.totalPages}, currentPage=*{currentPage})"
+		     id="pagination-container">
+		
 		</div>
-	</section>
-	
-	<div th:if="${totalPages > 1}"
-	     th:insert="fragments :: pagination(totalPages=*{totalPages}, currentPage=*{currentPage})"
-	     id="pagination-container">
-	
 	</div>
-
+	<div th:if="${session.cities.isEmpty()}">
+		<p id="not-enough-cities">There are not enough cities to be displayed</p>
+	</div>
 </div>
 </body>
 </html>
